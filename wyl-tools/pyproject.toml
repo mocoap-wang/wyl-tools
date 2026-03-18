@@ -1,0 +1,44 @@
+[build-system]
+requires = ["hatchling"]          # 构建后端，也可用 "setuptools", "flit", "poetry"
+build-backend = "hatchling.build"
+
+[project]
+name = "wyl-tools"               # PyPI 上的包名（必须唯一，用连字符）
+version = "0.0.3"                 # 版本号
+description = "常用函数的简单开发"
+readme = "README.md"
+license = {text = "MIT"}          # 或 license = {file = "LICENSE"}
+authors = [
+    {name = "wangyanlei", email = "wangyanlei310@163.com"}
+]
+keywords = ["pypi", "package", "tutorial"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.8"         # Python 版本要求
+dependencies = [                  # 运行时依赖
+]
+
+[project.optional-dependencies]   # 可选依赖（用户可用 pip install my-package[dev] 安装）
+dev = [
+    "pytest>=7.0",
+    "black",
+    "mypy",
+]
+
+[project.urls]                    # PyPI 页面会显示这些链接
+Homepage = "https://github.com/username/my_project"
+Documentation = "https://readthedocs.org"
+Repository = "https://github.com/username/my_project.git"
+Issues = "https://github.com/username/my_project/issues"
+
+[tool.hatch.build.targets.wheel]  # 构建配置
+packages = ["src/wyl"]
